@@ -1,0 +1,73 @@
+/* ১. সবার আগে ফন্ট ইমপোর্ট করুন */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* আপনার কনফিগারেশন অনুযায়ী 'font-bangla' ব্যবহার করা হয়েছে */
+    @apply font-bangla bg-gray-50 text-primary-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-english; /* শিরোনামগুলো ইংলিশ ফন্টে দেখতে ভালো লাগে */
+  }
+}
+
+@layer components {
+  /* গ্র্যাডিয়েন্ট টেক্সট ইফেক্ট */
+  .gradient-text {
+    @apply bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent;
+  }
+  
+  /* প্রিমিয়াম বাটন স্টাইল */
+  .btn-primary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-bold py-3 px-8 rounded-xl 
+           hover:from-secondary-400 hover:to-secondary-500 transform hover:-translate-y-1 
+           transition-all duration-300 shadow-lg shadow-secondary-500/25 hover:shadow-xl active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-900 font-bold py-3 px-8 rounded-xl border border-gray-200
+           hover:bg-gray-50 transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  /* সেকশন প্যাডিং ইউটিলিটি */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  /* মডার্ন গ্লাস কার্ড */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl rounded-3xl;
+  }
+
+  /* হিরো সেকশনের জন্য কাস্টম গ্র্যাডিয়েন্ট */
+  .hero-gradient {
+    @apply bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900;
+  }
+}
+
+/* ৩. কাস্টম এনিমেশন (যদি tailwind.config এ না থাকে) */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s infinite ease-in-out;
+}
