@@ -152,8 +152,8 @@ const Navbar = () => {
                 <i className="fab fa-youtube text-lg"></i>
               </a>
             </div>
-<button className="w-full bg-gradient-to-r from-blue-900 to-indigo-950 text-white py-4 rounded-2xl font-bold text-sm shadow-xl hover:shadow-blue-900/20 hover:-translate-y-0.5 transition-all active:scale-95">
-  <Link to="/admission"  onClick={() => setIsOpen(false)}>অনলাইন অ্যাডমিশন</Link>
+<button onClick={() => setIsOpen(false)} className="w-full bg-gradient-to-r from-blue-900 to-indigo-950 text-white py-4 rounded-2xl font-bold text-sm shadow-xl hover:shadow-blue-900/20 hover:-translate-y-0.5 transition-all active:scale-95">
+  <Link to="/admission"  >অনলাইন অ্যাডমিশন</Link>
 </button>
           </div>
         </div>
