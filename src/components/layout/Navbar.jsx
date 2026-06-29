@@ -153,9 +153,11 @@ const Navbar = () => {
               </a>
             </div>
             <button className="w-full bg-gradient-to-r from-blue-900 to-indigo-950 text-white py-4 rounded-2xl font-bold text-sm shadow-xl hover:shadow-blue-900/20 hover:-translate-y-0.5 transition-all active:scale-95">
-              <NavLink
+<NavLink
   to="/admission"
-
+  className={({ isActive }) =>
+    isActive ? "text-blue-500 font-bold" : ""
+  }
 >
   অনলাইন অ্যাডমিশন
 </NavLink>
